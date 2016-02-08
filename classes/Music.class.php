@@ -55,7 +55,14 @@ class Music {
 
         $table = '<table id="example" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
         foreach($gigs as $gig) {
-            $table .= '<tr><td>'.$gig['gig_date'].'</td><td>'.$gig['gig_bands'].'<b>'.$gig['gig_id'].'</b></td><td>'.$gig['gig_venue_id'].'</td><td>'.$gig['gig_price'].'</td></tr>';
+            $bgcolor = '';
+            if (file_exists('/xampp/htdocs/music/covers/'.$gig['gig_id'].'.jpg')) {
+                $bgcolor = '#00FF00';
+            } else {
+                $bgcolor = '#ff0000';
+            }
+
+             $table .= '<tr><td >'.$gig['gig_date'].'</td><td bgcolor='.$bgcolor.'>'.$gig['gig_bands'].'<b>'.$bgcolor."---".$gig['gig_id'].'</b></td><td>'.$gig['gig_venue_id'].'</td><td>'.$gig['gig_price'].'</td></tr>';
         }
 
         $table .= '</tbody></table>';
