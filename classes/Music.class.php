@@ -45,6 +45,7 @@ class Music {
 
         while($row = $this->db()->fetch_array($rows)){
           $currentGig = array();
+          $currentGig['gig_id'] = $row['gig_id'];
           $currentGig['gig_date'] = $row['gig_date'];
           $currentGig['gig_bands'] = utf8_encode($row['gig_bands']);
           $currentGig['gig_venue_id'] = $row['gig_venue_id'];
@@ -54,7 +55,7 @@ class Music {
 
         $table = '<table id="example" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
         foreach($gigs as $gig) {
-            $table .= '<tr><td>'.$gig['gig_date'].'</td><td>'.$gig['gig_bands'].'</td><td>'.$gig['gig_venue_id'].'</td><td>'.$gig['gig_price'].'</td></tr>';
+            $table .= '<tr><td>'.$gig['gig_date'].'</td><td>'.$gig['gig_bands'].'<b>'.$gig['gig_id'].'</b></td><td>'.$gig['gig_venue_id'].'</td><td>'.$gig['gig_price'].'</td></tr>';
         }
 
         $table .= '</tbody></table>';
