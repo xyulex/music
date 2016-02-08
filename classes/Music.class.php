@@ -1,7 +1,7 @@
 <?php
 define('DB_SERVER', "localhost");
 define('DB_USER', "root");
-define('DB_PASS', "");
+define('DB_PASS', "root");
 define('DB_DATABASE', "music");
 
 require_once('Database.class.php');
@@ -56,7 +56,7 @@ class Music {
         $table = '<table id="example" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
         foreach($gigs as $gig) {
             $bgcolor = '';
-            if (file_exists('/xampp/htdocs/music/covers/'.$gig['gig_id'].'.jpg')) {
+            if (file_exists('/xampp/htdocs/music/covers/'.$gig['gig_id'].'.jpg') || file_exists('/home/xyulex/www/music/covers/'.$gig['gig_id'].'.jpg')) {
                 $bgcolor = '#00FF00';
             } else {
                 $bgcolor = '#ff0000';
