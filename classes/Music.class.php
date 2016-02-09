@@ -1,7 +1,7 @@
 <?php
 define('DB_SERVER', "localhost");
 define('DB_USER', "root");
-define('DB_PASS', "root");
+define('DB_PASS', "");
 define('DB_DATABASE', "music");
 
 require_once('Database.class.php');
@@ -19,6 +19,23 @@ class Music {
     /**** Getters ****/
 
     // Get gigs.
+    public function getCover($gig_id) {
+        if (file_exists('/xampp/htdocs/music/covers/'.$gig_id.'.jpg') ||
+            file_exists('/home/xyulex/www/music/covers/'.$gig_id.'.jpg')){
+            return 'green';
+        }
+        return 'red';
+    }
+
+    public function getCurrency($gig_date) {
+        if (strtotime($gig_date)<strtotime('2002/01/01')) {
+                $currency = 'pta.';
+            } else{
+                $currency = '€';
+            }
+        return $currency;
+    }
+
     public function getStatistics() {
         $sql = 'select count(*) as bands from bands';
         $rows = $this->db()->query($sql);
@@ -48,26 +65,39 @@ class Music {
           $currentGig['gig_id'] = $row['gig_id'];
           $currentGig['gig_date'] = $row['gig_date'];
           $currentGig['gig_bands'] = utf8_encode($row['gig_bands']);
-          $currentGig['gig_venue_id'] = $row['gig_venue_id'];
+          $currentGig['gig_venue'] = utf8_encode($row['gig_venue']);
           $currentGig['gig_price'] = $row['gig_price'];
           $gigs[] = $currentGig;
         }
 
-        $table = '<table id="example" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
-        foreach($gigs as $gig) {
-            $bgcolor = '';
-            if (file_exists('/xampp/htdocs/music/covers/'.$gig['gig_id'].'.jpg') || file_exists('/home/xyulex/www/music/covers/'.$gig['gig_id'].'.jpg')) {
-                $bgcolor = '#00FF00';
-            } else {
-                $bgcolor = '#ff0000';
-            }
+        $table = '<table id="gigsTable" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
 
-             $table .= '<tr><td >'.$gig['gig_date'].'</td><td bgcolor='.$bgcolor.'>'.$gig['gig_bands'].'<b>'.$bgcolor."---".$gig['gig_id'].'</b></td><td>'.$gig['gig_venue_id'].'</td><td>'.$gig['gig_price'].'</td></tr>';
+        foreach($gigs as $gig) {
+            $bgcolor = $this->getCover($gig['gig_id']);
+            $table .= '<tr><td >'.$gig['gig_date'].'</td><td><a href="detail.php?gig_id='.$gig['gig_id'].'" style="color:'.$bgcolor.'">'.$gig['gig_bands'].'</a><b>---'.$gig['gig_id'].'</b></td><td>'.$gig['gig_venue'].'</td><td>'.$gig['gig_price'].'</td></tr>';
         }
 
         $table .= '</tbody></table>';
 
         return $table;
+    }
+
+    public function getGigsDetail($gig_id) {
+        $sql = "SELECT * FROM gigs where gig_id=" . $gig_id;
+        $rows = $this->db()->query($sql);
+        while($gig = $this->db()->fetch_array($rows)){
+            $currency = $this->getCurrency($gig['gig_date']);
+
+            echo
+            '<table class="table"><tr><td>'. $gig['gig_bands'] . '</td></tr>'.
+            '<tr><td>'. $gig['gig_date'] . '</td></tr>' .
+            '<tr><td>'. $gig['gig_price'] .' '.$currency. '</td></tr>' .
+            '<tr><td>'. utf8_encode($gig['gig_venue']) . '</td></tr>';
+            if ($this->getCover($gig['gig_id']) == 'green') {
+                echo '<tr><td><img src="/music/covers/'.$gig_id.'.jpg" class="table-responsive"></td></tr>';
+            }
+            echo '</table>';
+        }
     }
 
     /**** Setters ****/

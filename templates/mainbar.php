@@ -1,5 +1,4 @@
 <?php
- 
 require_once('../classes/Music.class.php');
 require_once('../settings.php');
 global $MUSIC;

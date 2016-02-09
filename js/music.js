@@ -1,7 +1,7 @@
- $(function(){  
- 	 $('#example').DataTable({
+ $(function(){
+ 	 $('#gigsTable').DataTable({
  	 	"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
- 	 	/*"pageLength": 20,*/
+ 	 	"pageLength": -1,
  	 	"language": {
             "url": "/music/js/spanish.json"
         }

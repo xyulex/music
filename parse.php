@@ -28,7 +28,7 @@ if (($gestor = fopen("concs.csv", "r")) !== FALSE) {
             $fecha2 = explode("/",$fecha);
             $fecha3 = $fecha2[2]."-".$fecha2[1]."-".$fecha2[0];
 
-           $chunk .= 'INSERT INTO `gigs`(gig_date,gig_bands, gig_price) values("'.$fecha3.'","'.$datos[1].'","'.$precio.'");<br/>';
+           $chunk .= 'INSERT INTO `gigs`(gig_date,gig_bands, gig_price, gig_venue) values("'.$fecha3.'","'.$datos[1].'","'.$precio.'", "'.$sala.'");<br/>';
 
     }
 
