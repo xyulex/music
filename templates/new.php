@@ -1,23 +1,23 @@
-<?php require_once('mainbar.php');
-global $CFG, $MUSIC;
-?>
+<?php require_once('mainbar.php'); ?>
 
-<form role="form">
+<form role="form" method="POST" action="save.php">
     <div class="form-group">
-      <label for="band">Grupos:</label>
-      <input type="text" class="form-control" id="band">
+      <label for="bands">Grupos:</label>
+      <input type="text" class="form-control" id="bands" name="bands">
     </div>
     <div class="form-group">
-      <label for="price">Precio:</label>
-      <input type="text" class="form-control" id="price">
+      <label for="date">Fecha:</label>
+      <input type="text" class="form-control" id="date" name="date">
     </div>
     <div class="form-group">
       <label for="venue">Sala:</label>
-      <select class="form-control" id="venue">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+      <input type="text" class="form-control" id="venue" name="venue">
+    </div>
+    <div class="form-group">
+      <label for="price">Precio:</label>
+      <input type="text" class="form-control" id="price" name="price">
+    </div>
+    <div class="form-group">
+      <input type="submit" id="submit" value="Save">
     </div>
 </form>

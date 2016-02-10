@@ -1,6 +1,6 @@
 
 <?php require_once('mainbar.php');
-global $CFG, $MUSIC;
+global $MUSIC;
 $gigs = $MUSIC->getGigs();
 echo $gigs;
 ?>

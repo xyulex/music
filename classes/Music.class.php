@@ -103,16 +103,13 @@ class Music {
     /**** Setters ****/
 
     // Grabar banda o sala.
-   /* public function setField($field, $value){
+    public function addGig($date, $bands, $venue, $price) {
         $data = new stdClass();
-        $data->name = utf8_decode($field);
-       /* $idinsert = $db->query_insert("dishes", $data);
-        $db->close();
-        return $idinsert;
+        $data->gig_date = utf8_decode($date);
+        $data->gig_bands = utf8_decode($bands);
+        $data->gig_venue = utf8_decode($venue);
+        $data->gig_price = $price;
+        $gig_id = $this->db()->query_insert("gigs", $data);
+        return $gig_id;
     }
-
-    public function addPoster($poster) {
-
-    }*/
-
 }
