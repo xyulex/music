@@ -25,9 +25,10 @@ header('Content-Type: text/html; charset=utf-8');
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-    <li><span class="navbar-brand"><?php echo $stats['bands'] . " bandas y " . $stats['gigs'] ?> conciertos</span></li>
+    <li><span class="navbar-brand"><?php echo $stats['bandsNumber'] . " bandas y " . $stats['gigs']['gigs'] ?> conciertos</span></li>
       <li><a href="new.php" id="new"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;&nbsp;Nuevo concierto</a></li>
-      <li><a href="gigs.php"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;&nbsp;Lista de conciertos</a></li>
+      <li><a href="gigs.php"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;&nbsp;Conciertos</a></li>
+      <li><a href="bands.php"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;&nbsp;Bandas</a></li>
       </li>
     </ul>
   </div>

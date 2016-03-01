@@ -37,16 +37,30 @@ class Music {
     }
 
     public function getStatistics() {
-        $sql = 'select count(*) as bands from bands';
+        $bandsArray = array();
+
+        // Bands
+        $sql = 'select gig_bands as bands from gigs';
         $rows = $this->db()->query($sql);
-        $row = $this->db()->fetch_array($rows);
+
+        while($row = $this->db()->fetch_array($rows)){
+            $bandsArrayRow = explode('+', $row['bands']);
+
+            foreach ($bandsArrayRow as $band) {
+                $bandTrimmed = trim($band);
+                if(!in_array($bandTrimmed, $bandsArray) && (!strpos($bandTrimmed,':'))) {
+                    $bandsArray[] = utf8_encode($bandTrimmed);
+                }
+            }
+        }
 
         $sql = 'select count(*) as gigs from gigs';
         $rows2 = $this->db()->query($sql);
         $row2 = $this->db()->fetch_array($rows2);
 
-        $stats = array_merge($row,$row2);
-
+        $stats['gigs']  = $row2;
+        $stats['bandsNumber'] = count($bandsArray);
+        $stats['totalBands'] = $bandsArray;
         return $stats;
     }
 
