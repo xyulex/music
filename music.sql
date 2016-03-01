@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2016 a las 11:43:28
+-- Tiempo de generación: 01-03-2016 a las 16:04:49
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -561,7 +561,7 @@ CREATE TABLE IF NOT EXISTS `gigs` (
   `gig_bands` varchar(255) NOT NULL,
   `gig_venue` varchar(50) NOT NULL,
   `gig_price` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `gigs`
@@ -569,18 +569,18 @@ CREATE TABLE IF NOT EXISTS `gigs` (
 
 INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`) VALUES
 (1, '1998-02-25', 'Green Day + D-Generation', 'Zeleste', 2700),
-(2, '1998-09-18', 'Bad Religion + No Use For A Name + Lagwagon + Def Con Dos + Specials + Die Toten Hosen + Cherry Poppin Daddies + Raimundos + Smooths + Mxpx + Unwritten Law + ANIMAL + H-Blockx + Redshift (WARPED 98)', 'Pabellón Olímpico de Badalona', 4500),
+(2, '1998-09-18', 'Warped Tour: Bad Religion + No Use For A Name + Lagwagon + Def Con Dos + Specials + Die Toten Hosen + Cherry Poppin Daddies + Raimundos + Smooths + MxPx + Unwritten Law + ANIMAL + H-Blockx + Redshift', 'Pabellón Olímpico de Badalona', 4500),
 (3, '1998-10-19', 'Lagwagon + Bouncing Souls + Avail', 'Zeleste', 2000),
 (4, '1999-10-04', 'Pennywise + Less Than Jake + The Pietasters + Ice-T + Dickers + Beatsteaks + Good Riddance + Ignite (WARPED 99)', 'Pabellón Olímpico de Badalona', 4500),
-(5, '1998-05-17', 'Rammstein + Primates ???????', 'Zeleste', 2200),
-(6, '2000-01-01', 'BLACK EYED PEAS + GUETTA', 'Cornellà', 0),
-(7, '2000-05-25', 'NOFX + Snapcase + Good Riddance + Terrorgruppe + Mad Caddies + Guttermouth (DECONSTRUCTION TOUR)', 'Zeleste', 3100),
-(8, '2000-10-02', 'Burning Heads + Heideroosjes + Terrorgruppe (EPITAPH TOUR)', 'As de Copes', 1800),
+(5, '1998-05-17', 'Rammstein + Primates', 'Zeleste', 2200),
+(6, '2000-01-01', 'Black Eyed Peas + David Guetta', 'Cornellà', 0),
+(7, '2000-05-25', 'Deconstruction Tour: NOFX + Snapcase + Good Riddance + Terrorgruppe + Mad Caddies + Guttermouth', 'Zeleste', 3100),
+(8, '2000-10-02', 'Epitaph Tour: Burning Heads + Heideroosjes + Terrorgruppe', 'As de Copes', 1800),
 (9, '2000-10-06', 'No Use For A Name + Nerf Herder', 'Garatge', 2100),
 (10, '2000-10-09', 'NOFX + Hi-Standard + Teen Idols', 'Zeleste', 2500),
-(11, '2001-03-24', 'Less Than Jake + Frenzhal Rhomb', 'Garatge', 2000),
-(12, '2001-04-08', 'Ignite + SNFU + Deviates + Venerea + Powerhouse (VANS TOUR)', 'La Báscula', 2000),
-(13, '2001-09-06', 'NoWayOut', 'Lliça', 0),
+(11, '2001-03-24', 'Less Than Jake + Frenzal Rhomb', 'Garatge', 2000),
+(12, '2001-04-08', 'Vans Tour: Ignite + SNFU + Deviates + Venerea + Powerhouse', 'La Báscula', 2000),
+(13, '2001-09-06', 'No way out', 'Lliça', 0),
 (14, '2001-09-30', 'Good Clean Fun + E150', 'Big Bang', 800),
 (15, '2001-10-11', 'Good Riddance + Death By Stereo', 'Garatge', 2525),
 (16, '2001-11-10', 'Harum Scarum + Planes Mistaken For Stars + Standstill + Skeep Weef', 'La Nau - La Roca', 500),
@@ -603,7 +603,7 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (33, '2002-09-10', 'Highscore + Cinder + Aspersores', 'La Nau - La Roca', 3),
 (34, '2002-09-25', 'Himsa + Scally', 'La Nau - La Roca', 3),
 (35, '2002-09-28', 'Throwdown + 18 Visions + Moksha + Northstar', 'Rock And Trini', 6),
-(36, '2002-10-19', 'ALTIMIRA: GAS Drummers + NoWayOut + Uziel + Maple + SadManSaid + E150 + RAID + ComeNWait + Stupper Suids + Moksha + Get Real + Tokyo Sex Destruction', 'Altimira', 10),
+(36, '2002-10-19', 'Altimira fest: GAS Drummers + NoWayOut + Uziel + Maple + SadManSaid + E150 + RAID + ComeNWait + Stupper Suids + Moksha + Get Real + Tokyo Sex Destruction', 'Altimira', 10),
 (37, '2002-11-15', 'Cube + Liquid Thorn Diet', 'Casal Cerdanyola', 0),
 (38, '2002-12-06', 'Jimmy Eat World + Midtown (NO)', 'Bikini', 18),
 (39, '2003-01-10', 'Maple + Unfinished Sympathy', 'Casal Cerdanyola', 0),
@@ -627,7 +627,7 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (57, '2003-08-21', 'Pointing Finger + Cinder + Red Turning Blue + Jack Torrance', 'Big Bang', 4),
 (58, '2003-09-25', 'Funeral Diner + Kidsgofree', 'La Nau - La Roca', 3),
 (59, '2003-10-07', 'Amanda Woodward + Apollo Programm', 'La Nau - La Roca', 3),
-(60, '2003-11-25', 'Suicidal Tendencies + Ignite + Madball + Death By Stereo + Sworn Enemy + Backfire + Length Of Time + Knuckledust (RESISTANCE TOUR)', 'Razzmatazz 2', 28),
+(60, '2003-11-25', 'Resistance Tour: Suicidal Tendencies + Ignite + Madball + Death By Stereo + Sworn Enemy + Backfire + Length Of Time + Knuckledust', 'Razzmatazz 2', 28),
 (61, '2004-02-13', 'Sick Of It All + Most Precious Blood + Bleeding Through', 'KGB', 15),
 (62, '2004-02-16', 'The Appleseed Cast + Maple', 'Bikini', 10),
 (63, '2004-04-11', 'DRI + Zann + Battle Royale', 'La Nau - La Roca', 10),
@@ -639,7 +639,7 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (69, '2006-01-23', 'JR Ewing + Dirty Perfect', 'Barlfy', 6),
 (70, '2006-01-25', 'Rotten Sound + Sayyadina + Flyblown', 'Underworld (Londres)', 7),
 (71, '2006-01-26', 'Terror + Blacklisted + Donnybrook', 'Underworld (Londres)', 11),
-(72, '2006-01-28', 'Bullet For My Vallentine + Hawthorne Heights + Still Remains + Aiden(NO) (KERRANG TOUR)', 'Brixton Academy (Londres)', 14),
+(72, '2006-01-28', 'Kerrang Tour XXV: Bullet For My Vallentine + Hawthorne Heights + Still Remains + Aiden(NO)', 'Brixton Academy (Londres)', 14),
 (73, '2006-02-17', 'Sunn O))) + Earth + An Albatross', 'Mephisto', 18),
 (74, '2006-03-04', 'Northstar + Cinder + The Defense + The Challenge', 'Vallcarca', 3),
 (75, '2006-08-06', 'MDC + DeathSkulls + Jackal', 'Underworld (Londres)', 8),
@@ -672,7 +672,7 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (102, '2007-02-03', 'Aina + No More Lies', 'Apolo', 10),
 (103, '2007-02-20', 'Amanda Woodward + Aussitot Mort + Sugartown Cabaret', 'Codines', 5),
 (104, '2007-02-23', 'Tiki Phantoms + Valiumbitch', 'El Moli - La Roca', 5),
-(105, '2007-03-14', 'Gang Green + Afganistán Yeyes + Hzero', 'Apolo2', 10),
+(105, '2007-03-14', 'Gang Green + Afganistan Yeyes + Hzero', 'Apolo2', 10),
 (106, '2007-03-17', 'Zinc + Més Que Odi', 'El Moli - La Roca', 5),
 (107, '2007-03-24', 'Enoch Ardon + Reaction Reaction', 'El Moli - La Roca', 5),
 (108, '2007-04-05', 'Mostros + Erantzun', 'El Moli - La Roca', 5),
@@ -689,7 +689,7 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (119, '2007-07-25', 'From The Ashes + C_Utter', 'El Moli - La Roca', 5),
 (120, '2007-08-30', 'Bush + Invasión', 'El Moli - La Roca', 5),
 (121, '2007-09-28', 'Brutal Knights + Go Go Deads', 'El Moli - La Roca', 5),
-(122, '2007-10-13', 'Bloodshed Fest', 'Dynamo - Eindhoven', 15),
+(122, '2007-10-13', 'Bloodshed Fest: Nice Idiot + Putrescense + DrDoom + Jesus Cröst + Blood I Bleed + Infected Pussy + Fallen World + Rectal Smegma + Drugs of Faith + Massgrav + Malignant Tumour + Suppository + Agathocles + Regurgitate + Dead Infection', 'Dynamo - Eindhoven', 15),
 (123, '2007-11-14', 'Suma + Chang Ffos', 'Codines', 5),
 (124, '2007-11-30', 'Gulag + Uber + H-Zero', 'El Moli - La Roca', 5),
 (125, '2008-01-17', 'Afganistan Yeyes + Innombrables', 'El Moli - La Roca', 0),
@@ -700,24 +700,24 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (130, '2008-04-18', 'Seein Red + Fix Me + Invasión + Botox Housewife', 'Vallcarca', 5),
 (131, '2008-04-26', 'Sick Of It All + Ignite + Subterranean Kids + Wisdom In Chains + Death Before Dishonor + Burn The 8 Track + Twenty Fighters', 'Apolo', 20),
 (132, '2008-05-17', 'Haemorrhage + Gruesome Stuff Relish + Mixomatosis + Pesta Porcina + Altar Of Giallo', 'Mephisto', 18),
-(133, '2008-06-20', 'HELLFEST 2008 - 3 días: NOFX, Shining, Rotten Sound, Haemorrhage, Origin…', 'Clisson - Francia', 109),
-(134, '2008-09-12', 'BIOMECHANICAL [uk] + PUTREFY [uk] + OBLIQUE RAIN [pt] + ANGRIFF [pt] + B.I.V.L. [fr] + ENCEPHALON [pt + NILE [us] + GRAVE [se] + BELPHEGOR [at] + GROG [pt] + SUBCAOS [pt] + DEMON DAGGER [pt] + FLAGELLUM DEI [pt] + BETWEEN THE FROST [es] (CAOS EMERGENTE)', 'Recarei - Portugal', 50),
-(135, '2008-11-07', 'Moñigo + Difenacum + Dead Congregation + Haemorrhage + Demigod + Regurgitate + Unsane Crisis + Graveyard + Gruesome Stuff Relish + rompeprop + Skepticism + Vomitory (TRAUMA FEST)', 'El Grito - Fuenlabrada', 35),
+(133, '2008-06-20', 'Hellfest 2008 - NOFX, Shining, Rotten Sound, Haemorrhage, Origin…', 'Clisson - Francia', 109),
+(134, '2008-09-12', 'Caos Emergente: Biomechanical + Putrefy + Oblique Rain + Angriff + B.I.V.L. + Encephalon + Nile + Grave + Belphegor + Grog + Subcaos + Demon Dagger + Flagellum Dei + Between the Frost', 'Recarei - Portugal', 50),
+(135, '2008-11-07', 'Trauma fest: Moñigo + Difenacum + Dead Congregation + Haemorrhage + Demigod + Regurgitate + Unsane Crisis + Graveyard + Gruesome Stuff Relish + Rompeprop + Skepticism + Vomitory', 'El Grito - Fuenlabrada', 35),
 (136, '2008-11-21', 'Grief + Trap Them + Lords Of Bukkake', 'Codines', 10),
-(137, '2008-11-22', 'Between The Frost', 'Crossroads - Terrassa', 9),
+(137, '2008-11-22', 'Between the Frost', 'Crossroads - Terrassa', 9),
 (138, '2009-02-28', 'Moho + Ultraphallus + Lords Of Bukkake + Warchetype', 'Codines', 5),
 (139, '2009-03-08', 'Mother Of Six + Yaro', 'Codines', 5),
 (140, '2009-03-13', 'Yacopsae + Jesus Crost', 'Puerto Hurraco', 11),
 (141, '2009-03-21', 'FireNIce09: Fresh Trash + The Gundown + Good Fellaz + Common Cause + Cinder (Segundo día)', 'Can Basté BCN', 7),
 (142, '2009-03-27', 'Moksha + Naizroxa + Micronun(1r concert)', 'Codines', 5),
-(143, '2009-03-31', 'AC/DC + The Answer(Ireland)', 'Palau Sant Jordi', 61),
+(143, '2009-03-31', 'AC/DC + The Answer', 'Palau Sant Jordi', 61),
 (144, '2009-04-02', 'Earth + StebMo', 'Apolo2', 12),
 (145, '2009-04-09', 'Raein + Interlude + Heads And Heads (1r concierto)', 'Roxy Rock Café', 6),
 (146, '2009-04-16', 'Baroness + Kids Pantera', 'BeCool', 12),
 (147, '2009-04-17', 'Mono + Geoff Farina', 'Apolo2', 12),
 (148, '2009-04-25', 'Asphyx + Graveyard + Looking For An Answer + Violent Headache', 'Espai Jove de l''Eixample', 22),
 (149, '2009-06-07', 'AC/DC + The Answer + Lilith', 'Estadi Olimpic Lluis Companys', 73),
-(150, '2009-06-27', 'Electric Wizard + Moho + Wachetype + Lords Of Bukkake (HERETIC FEST)', 'Apolo2', 19),
+(150, '2009-06-27', 'Heretic Fest: Electric Wizard + Moho + Warchetype + Lords Of Bukkake', 'Apolo2', 19),
 (151, '2009-07-11', 'Metallica + Slipknot + Machine Head + Down + Lamb Of God + Mastodon + SA + Gojira (SONISPHERE)', 'Fòrum', 70),
 (152, '2009-07-27', 'Sepultura + Voivod + Municipal Waste + SNFU', 'Apolo', 27),
 (153, '2009-08-11', 'Offspring + No Children', 'Razzmatazz', 30),
@@ -729,7 +729,7 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (159, '2009-11-03', 'Do Make Say Think', 'Apolo2', 19),
 (160, '2009-11-25', 'Melvins + Big Business + Porn', 'Apolo', 23),
 (161, '2009-11-26', 'Isis + Dälek + Keelhaul', 'Apolo', 1000000),
-(162, '2010-02-19', 'Hatebreed + Anal Hard', 'Razzmatazz 2', 10000000),
+(162, '2010-02-19', 'Hatebreed + Anal Hard', 'Razzmatazz 2', 20),
 (163, '2010-07-22', 'The Get Up Kids + The Backseats + Astrobahn', 'La Sala Live!(Madrid)', 0),
 (164, '2010-11-11', 'Imelda May', 'Bikini', 22),
 (165, '2010-11-17', 'Joe Satriani + Bed Evett and triple double', 'Apolo', 36),
@@ -737,12 +737,12 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (167, '2011-04-19', 'NOFX + Teenage Bottlerocket + Old Man Markley', 'Razzmatazz', 27),
 (168, '2011-04-30', 'Soilent Green + Today Is The Day', 'Mephisto', 15),
 (169, '2011-05-20', 'Machetazo + Korgull the exterminator + Maleit', 'Mephisto', 15),
-(170, '2011-06-21', 'Eyehategod + Church of misery', 'Apolo2', 100000),
+(170, '2011-06-21', 'Eyehategod + Church of misery', 'Apolo2', 20),
 (171, '2011-06-28', 'Boris + Russian Circles + Saade', 'Apolo2', 22),
 (172, '2011-07-21', 'Neurosis + Karma To Burn', 'Apolo', 0),
 (173, '2011-09-22', 'Millencolin + Atlas Losing Grip + Twopointeight', 'Apolo', 100000),
 (174, '2011-10-11', 'Wormrot + Maruta + Depecho Mode', 'Codines', 5),
-(175, '2011-12-11', 'Weekend Nachos + Cancer Kids', 'Codines', 5),
+(175, '2011-10-11', 'Weekend Nachos + Cancer Clan', 'Codines', 5),
 (176, '2012-04-20', 'Lagwagon + Silversuck + Estupido Yo', 'Razzmatazz 2', 18),
 (177, '2012-08-02', 'Rancid + Klasse Kriminale + Último Asalto + Gas Drummers', 'Razzmatazz', 28),
 (178, '2012-11-08', 'Gaslight Anthem + Les Fat Jones', 'Apolo2', 23),
@@ -752,7 +752,7 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (182, '2014-02-21', 'Me First And The Gimme Gimmes + Old Man Markley', 'Apolo', 22),
 (183, '2014-06-18', 'Bad Religion + Against Me', 'Razzmatazz', 28),
 (184, '2014-10-24', 'Cannibal Corpse + Revocation + Aeon', 'Razzmatazz 3', 27),
-(185, '2014-10-30', 'Sworn Enemy + ???', 'RockSound', 10),
+(185, '2014-10-30', 'Sworn Enemy + Claiming the crown', 'RockSound', 10),
 (186, '2015-03-04', 'Marduk + Belphegor + Bliss Of Flesh + Krysantemia', 'Apolo', 24),
 (187, '2015-03-11', 'Joey Cape + Chris Cresswell', 'RockSound', 10),
 (188, '2015-03-15', 'Lagwagon + Flatliners + Western Addiction', 'Apolo', 23),
@@ -765,7 +765,9 @@ INSERT INTO `gigs` (`gig_id`, `gig_date`, `gig_bands`, `gig_venue`, `gig_price`)
 (195, '2015-11-01', 'Negative Approach + Rotten Mind + Golem', 'Rocksound', 10),
 (196, '2015-11-02', 'Children of Bodom + Sylosys', 'Razzmatazz 2', 0),
 (197, '2015-11-03', 'Slayer + Anthrax + Kvelertak', 'Razzmatazz', 0),
-(198, '2015-11-18', 'Zebrahead + MxPx + Daylight', 'Bóveda', 18);
+(198, '2015-11-18', 'Zebrahead + MxPx + Daylight', 'Bóveda', 18),
+(199, '2016-02-20', 'Millencolin + Templeton Pek', 'Apolo', 0),
+(200, '2016-02-26', 'Netherlands Deathfest', '013 (Tilburg)', 102);
 
 -- --------------------------------------------------------
 
@@ -889,7 +891,7 @@ MODIFY `band_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=513;
 -- AUTO_INCREMENT de la tabla `gigs`
 --
 ALTER TABLE `gigs`
-MODIFY `gig_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=199;
+MODIFY `gig_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=201;
 --
 -- AUTO_INCREMENT de la tabla `venues`
 --
