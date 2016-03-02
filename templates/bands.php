@@ -1,4 +1,3 @@
-
 <?php require_once('mainbar.php');
 global $MUSIC;
 $stats = $MUSIC->getStatistics();
