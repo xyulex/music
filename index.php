@@ -1,4 +1,4 @@
 
-<?php 
-header('location: templates/jumbotron.php');
+<?php
+header('location: templates/gigs.php');
 ?>

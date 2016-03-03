@@ -7,10 +7,7 @@ $stats = $MUSIC->getStatistics();
 header('Content-Type: text/html; charset=utf-8');
 ?>
 <link href="<?php echo $CFG->dircss ?>"type='text/css' rel='stylesheet'>
-
 <script src="<?php echo $CFG->jquery ?>" type="text/javascript"></script>
-
-
 <link href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"type='text/css' rel='stylesheet'>
 <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 <script src="/music/js/music.js" type="text/javascript"></script>
@@ -21,7 +18,7 @@ header('Content-Type: text/html; charset=utf-8');
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="<?php echo $CFG->templatedir ?>/jumbotron.php">Music</a>
+    <a class="navbar-brand" href="<?php echo $CFG->templatedir ?>gigs.php">Music</a>
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
