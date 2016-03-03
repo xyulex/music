@@ -36,7 +36,7 @@ class Music {
     }
 
     public function getStatistics() {
-        $bandsArray = array();
+        $integrated = array();
 
         // Bands
         $sql = 'select gig_bands as bands from gigs';
@@ -46,15 +46,12 @@ class Music {
             $bandsArrayRow = explode('+', $row['bands']);
 
             foreach ($bandsArrayRow as $band) {
-                $bandTrimmed = trim($band);
-                if(!in_array(utf8_encode($bandTrimmed), $bandsArray)) {
-                    if (strpos($bandTrimmed,':')) {
-                        $bandTrimmedArray = explode(":", $bandTrimmed);
-                        $bandsArray[] = utf8_encode(trim($bandTrimmedArray[1]));
+                    if (strpos($band,':')) {
+                        $bandTrimmed = explode(":", $band);
+                        $integrated[] = utf8_encode(trim($bandTrimmed[1]));
                     } else {
-                        $bandsArray[] = utf8_encode($bandTrimmed);
+                        $integrated[] = utf8_encode(trim($band));
                     }
-                }
             }
         }
 
@@ -63,8 +60,8 @@ class Music {
         $row2  = $this->db()->fetch_array($rows2);
 
         $stats['gigs']  = $row2;
-        $stats['bandsNumber'] = count($bandsArray);
-        $stats['totalBands'] = $bandsArray;
+        $stats['bandsNumber'] = count(array_count_values($integrated));
+        $stats['integrated']  = array_count_values($integrated);
         return $stats;
     }
 
@@ -88,7 +85,7 @@ class Music {
           $gigs[] = $currentGig;
         }
 
-        $table = '<table id="gigsTable" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
+        $table = '<table id="gigsTable" data-order="[0]" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
 
         foreach ($gigs as $gig) {
             $bgcolor = $this->getCover($gig['gig_id']);
