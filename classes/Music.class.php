@@ -10,22 +10,22 @@ class Music {
 
     protected $db;
 
+    // Database connection
     public function db() {
         $db = new Database(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
         $db->connect();
         return $db;
     }
 
-    /**** Getters ****/
-
-    // Get gigs.
+    // Get cover for selected gig.
     public function getCover($gig_id) {
         if (file_exists('../covers/'.$gig_id.'.jpg')) {
-            return 'green';
+            return true;
         }
-        return 'red';
+        return false;
     }
 
+    // Get currency (€ / pta).
     public function getCurrency($gig_date) {
         if (strtotime($gig_date)<strtotime('2002/01/01')) {
                 $currency = 'pta.';
@@ -35,6 +35,7 @@ class Music {
         return $currency;
     }
 
+    // Get # of bands, bands times seen and total gigs.
     public function getStatistics() {
         $integrated = array();
 
@@ -65,6 +66,7 @@ class Music {
         return $stats;
     }
 
+    // Get all the gigs.
     public function getGigs($filter = '') {
         $where = '';
         if ($filter) {
@@ -85,11 +87,17 @@ class Music {
           $gigs[] = $currentGig;
         }
 
-        $table = '<table id="gigsTable" data-order="[0]" class="display"><thead><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
+        $table = '<table id="gigsTable" data-order="[0]" class="display"><thead><th>ID</th><th>Fecha</th><th>Grupos</th><th>Sala</th><th>Precio</th></thead><tbody>';
 
         foreach ($gigs as $gig) {
-            $bgcolor = $this->getCover($gig['gig_id']);
-            $table .= '<tr><td >'.$gig['gig_date'].'</td><td><a href="detail.php?gig_id='.$gig['gig_id'].'" style="color:'.$bgcolor.'">'.$gig['gig_bands'].'</a><b>---'.$gig['gig_id'].'</b></td><td>'.$gig['gig_venue'].'</td><td>'.$gig['gig_price'].'</td></tr>';
+            $bgcolor = $this->getCover($gig['gig_id']) ? 'green' : 'red';
+            $table .= '<tr><td>'.$gig['gig_id'].'<td>'.$gig['gig_date'].'</td><td>';
+            $table .= '<a href="detail.php?gig_id='.$gig['gig_id'].'" style="color:'.$bgcolor.'" id="'.$gig['gig_id'].'" >'.$gig['gig_bands'].'</a>';
+            if ($this->getCover($gig['gig_id'])) {
+                $table .= '<img src="../covers/'. $gig['gig_id'].'.jpg" style="display:none;width:100px;float:right;border:2px solid black">';
+            }
+
+            $table .='</td><td>'.$gig['gig_venue'].'</td><td>'.$gig['gig_price'].'</td></tr>';
         }
 
         $table .= '</tbody></table>';
@@ -97,6 +105,7 @@ class Music {
         return $table;
     }
 
+    // Get gigs detail.
     public function getGigsDetail($gig_id) {
         $sql = "SELECT * FROM gigs where gig_id=" . $gig_id;
         $rows = $this->db()->query($sql);
@@ -115,9 +124,7 @@ class Music {
         }
     }
 
-    /**** Setters ****/
-
-    // Grabar banda o sala.
+    // Set new gig.
     public function addGig($date, $bands, $venue, $price) {
         $data = new stdClass();
         $data->gig_date  = utf8_decode($date);
