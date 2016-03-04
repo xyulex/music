@@ -118,7 +118,7 @@ class Music {
                 echo '<td rowspan="4"><img src="/music/covers/'.$gig_id.'.jpg" class="table-responsive"></td>';
             }
             echo
-            '<td><h1>'. $gig['gig_bands'] . '</h1><h3>' . date('d-m-Y', strtotime($gig['gig_date'])) . '</h3><h4>' . $gig['gig_price'] . $currency. '</h4><h4>'. utf8_encode($gig['gig_venue']) . '</h4><br /><a class="btn btn-primary" href="gigs.php"><< Volver</a></td></tr></table>';
+            '<td><h1>'. utf8_encode($gig['gig_bands']) . '</h1><h3>' . date('d-m-Y', strtotime($gig['gig_date'])) . '</h3><h4>' . $gig['gig_price'] . $currency. '</h4><h4>'. utf8_encode($gig['gig_venue']) . '</h4><br /><a class="btn btn-primary" href="gigs.php"><< Volver</a></td></tr></table>';
         }
     }
 
