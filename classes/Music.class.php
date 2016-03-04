@@ -113,14 +113,12 @@ class Music {
             $currency = $this->getCurrency($gig['gig_date']);
 
             echo
-            '<table class="table" id="gigDetail"><tr><td>'. $gig['gig_bands'] . '</td></tr>'.
-            '<tr><td>'. $gig['gig_date'] . '</td></tr>' .
-            '<tr><td>'. $gig['gig_price'] .' '.$currency. '</td></tr>' .
-            '<tr><td>'. utf8_encode($gig['gig_venue']) . '</td></tr>';
-            if ($this->getCover($gig['gig_id']) == 'green') {
-                echo '<tr><td><img src="/music/covers/'.$gig_id.'.jpg" class="table-responsive"></td></tr>';
+            '<table class="table" id="gigDetail"><tr>';
+            if ($this->getCover($gig['gig_id'])) {
+                echo '<td rowspan="4"><img src="/music/covers/'.$gig_id.'.jpg" class="table-responsive"></td>';
             }
-            echo '</table>';
+            echo
+            '<td><h1>'. $gig['gig_bands'] . '</h1><h3>' . date('d-m-Y', strtotime($gig['gig_date'])) . '</h3><h4>' . $gig['gig_price'] . $currency. '</h4><h4>'. utf8_encode($gig['gig_venue']) . '</h4><br /><a class="btn btn-primary" href="gigs.php"><< Volver</a></td></tr></table>';
         }
     }
 

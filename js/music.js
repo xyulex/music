@@ -29,8 +29,7 @@
  	});
 
 	gigDetail.load(function() {
-	    var ogWidth = this.width;
-	    $(this).attr("width", ogWidth / 2);
+	    $(this).attr("width", this.width / 2);
 	}).bind('mouseenter mouseleave', function(e) {
 	    $(this).stop().animate({
 	        width: this.width * (e.type === 'mouseenter' ? 2 : 0.5)
