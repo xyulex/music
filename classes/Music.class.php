@@ -113,7 +113,7 @@ class Music {
             $currency = $this->getCurrency($gig['gig_date']);
 
             echo
-            '<table class="table"><tr><td>'. $gig['gig_bands'] . '</td></tr>'.
+            '<table class="table" id="gigDetail"><tr><td>'. $gig['gig_bands'] . '</td></tr>'.
             '<tr><td>'. $gig['gig_date'] . '</td></tr>' .
             '<tr><td>'. $gig['gig_price'] .' '.$currency. '</td></tr>' .
             '<tr><td>'. utf8_encode($gig['gig_venue']) . '</td></tr>';
