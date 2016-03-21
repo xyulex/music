@@ -1,5 +1,5 @@
  $(function(){
- 	var table		= $('#gigsTable');
+ 	var table		= $('#gigsTable, #bandsTable');
  	var tr			= $('#gigsTable tr');
  	var gigDetail	= $('#gigDetail img');
 
